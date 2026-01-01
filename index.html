@@ -1610,34 +1610,35 @@ function resetScrollState() {
 
 
 <script>
-const path = window.location.pathname;
-const hash = window.location.hash;
+(function () {
+  const path = window.location.pathname;
+  const hash = window.location.hash;
 
-// HOME (GitHub Pages folder, index.html, root, or hash)
-if (
-  path.endsWith("/web/") ||
-  path.endsWith("/web/index.html") ||
-  path === "/" ||
-  hash === "#jdbein23nf43"
-) {
-  document.getElementById("btnhome23de")?.classList.add("active");
-}
+  const isHome =
+    !hash ||                      // ✅ FIRST LOAD (no hash yet)
+    hash === "#jdbein23nf43" ||
+    path.endsWith("/web/") ||
+    path.endsWith("/web/index.html") ||
+    path === "/";
 
-// ABOUT
-if (path.includes("about")) {
-  document.getElementById("btnabout23de")?.classList.add("active");
-}
+  if (isHome) {
+    document.getElementById("btnhome23de")?.classList.add("active");
+  }
 
-// TITLE
-if (path.includes("title1")) {
-  document.getElementById("btntitle23de23")?.classList.add("active");
-}
+  if (path.includes("about")) {
+    document.getElementById("btnabout23de")?.classList.add("active");
+  }
 
-// GAME
-if (path.includes("game")) {
-  document.getElementById("btngame23fr3")?.classList.add("active");
-}
+  if (path.includes("title1")) {
+    document.getElementById("btntitle23de23")?.classList.add("active");
+  }
+
+  if (path.includes("game")) {
+    document.getElementById("btngame23fr3")?.classList.add("active");
+  }
+})();
 </script>
+
 
 
 
@@ -1646,4 +1647,3 @@ if (path.includes("game")) {
 </html>
 
 
-ok i delete the script now give the script you gavge me before
