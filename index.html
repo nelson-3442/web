@@ -1548,25 +1548,7 @@ function bfe83mfi9ni34() {
 }
 </script>
 
-<script>
-const currentPage = window.location.pathname;
 
-if (currentPage === "/" || currentPage.endsWith("index.html")) {
-  document.getElementById("btnhome23de")?.classList.add("active");
-}
-
-if (currentPage.includes("about")) {
-  document.getElementById("btnabout23de")?.classList.add("active");
-}
-
-if (currentPage.includes("title1")) {
-  document.getElementById("btntitle23de23")?.classList.add("active");
-}
-
-if (currentPage.includes("game")) {
-  document.getElementById("btngame23fr3")?.classList.add("active");
-}
-</script>
 
 
 <script>
@@ -1627,6 +1609,35 @@ function resetScrollState() {
 </script>
 
 
+<script>
+const path = window.location.pathname;
+const hash = window.location.hash;
+
+// HOME (GitHub Pages folder, index.html, root, or hash)
+if (
+  path.endsWith("/web/") ||
+  path.endsWith("/web/index.html") ||
+  path === "/" ||
+  hash === "#jdbein23nf43"
+) {
+  document.getElementById("btnhome23de")?.classList.add("active");
+}
+
+// ABOUT
+if (path.includes("about")) {
+  document.getElementById("btnabout23de")?.classList.add("active");
+}
+
+// TITLE
+if (path.includes("title1")) {
+  document.getElementById("btntitle23de23")?.classList.add("active");
+}
+
+// GAME
+if (path.includes("game")) {
+  document.getElementById("btngame23fr3")?.classList.add("active");
+}
+</script>
 
 
 
@@ -1635,3 +1646,4 @@ function resetScrollState() {
 </html>
 
 
+ok i delete the script now give the script you gavge me before
