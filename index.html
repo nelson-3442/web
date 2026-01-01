@@ -1610,16 +1610,15 @@ function resetScrollState() {
 
 
 <script>
-(function () {
+window.addEventListener("DOMContentLoaded", () => {
   const path = window.location.pathname;
   const hash = window.location.hash;
 
   const isHome =
-    !hash ||                      // ✅ FIRST LOAD (no hash yet)
-    hash === "#jdbein23nf43" ||
-    path.endsWith("/web/") ||
-    path.endsWith("/web/index.html") ||
-    path === "/";
+    path.endsWith("/") ||               // GitHub Pages folder
+    path.endsWith("index.html") ||       // Local / refresh
+    hash === "" ||                       // FIRST VISIT
+    hash === "#jdbein23nf43";             // Home anchor
 
   if (isHome) {
     document.getElementById("btnhome23de")?.classList.add("active");
@@ -1636,9 +1635,8 @@ function resetScrollState() {
   if (path.includes("game")) {
     document.getElementById("btngame23fr3")?.classList.add("active");
   }
-})();
+});
 </script>
-
 
 
 
