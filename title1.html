@@ -256,6 +256,15 @@ body {
 }
 
 
+/* hide / show menu animation */
+.jn89nfjeu8234nrk9 {
+  transition: transform 0.3s ease;
+}
+
+.jn89nfjeu8234nrk9.hide-menu {
+  transform: translateY(-100%);
+}
+
 
 
     </style>
@@ -401,9 +410,61 @@ if (currentPage.includes("game")) {
 }
 </script>
 
+<script>
+let lastScrollY = window.scrollY;
+let downScrollDistance = 0;
+let upScrollDistance = 0;
+
+const menu = document.getElementById("jeun73ujr84nr");
+
+const hideAfter = 150; // px scrolled DOWN before hiding
+const showAfter = 100; // px scrolled UP before showing
+const delta = 5;       // ignore tiny scrolls
+
+window.addEventListener("scroll", () => {
+  const currentScrollY = window.scrollY;
+  const diff = currentScrollY - lastScrollY;
+
+  // ignore tiny scroll noise
+  if (Math.abs(diff) < delta) return;
+
+  // 🔽 scrolling down
+  if (diff > 0) {
+    downScrollDistance += diff;
+    upScrollDistance = 0;
+
+    if (downScrollDistance >= hideAfter) {
+      menu.classList.add("hide-menu");
+    }
+  }
+
+  // 🔼 scrolling up
+  if (diff < 0) {
+    upScrollDistance += Math.abs(diff);
+    downScrollDistance = 0;
+
+    if (upScrollDistance >= showAfter) {
+      menu.classList.remove("hide-menu");
+    }
+  }
+
+  lastScrollY = currentScrollY;
+});
+
+// ensure visible on page load
+window.addEventListener("load", () => {
+  menu.classList.remove("hide-menu");
+  lastScrollY = window.scrollY;
+  downScrollDistance = 0;
+  upScrollDistance = 0;
+});
+</script>
+
 
 
 </body>
 </html>
+
+
 
 
