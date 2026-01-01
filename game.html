@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/969da6616e.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  
+
+<style>
+
+
+
+/* proyecto juego version pc (inicio css) */
+
+
+
+#controls834n43mn3, #gamebuttons839hk32 {
+text-align: center;
+}
+
+
+
+/* left and right button */
+
+.button38nrm4rf {
+
+
+font-size: 20px;
+padding-left: 50px ;
+padding-right: 50px;
+padding-top: 13px;
+padding-bottom: 13px;
+background-color: #A2CA71;
+color: #F5004F;
+font-family: "Nunito", sans-serif;
+font-weight: 700;
+ 
+border-width: 5px;   /* thickness */
+
+}
+
+
+.button38nrm4rf {
+  margin-left: 20px; /* only applies to the RIGHT button */
+}
+
+/* up and down buttons */
+
+.buttton29n39mo43 {
+
+font-size: 20px;
+padding-left: 65px;
+padding-right: 65px;
+padding-top: 13px;
+padding-bottom: 13px;
+background-color: #A2CA71;
+color: #F5004F;
+font-family: "Nunito", sans-serif;
+font-weight: 700;
+border-width: 5px;   /* thickness */
+}
+
+
+/* start button */
+.start34kn23jk34
+{
+font-size: 20px;
+padding-top: 17px;
+padding-bottom: 17px;
+
+
+width: 150px;   /* 👈 set same width */
+background-color: #A2CA71;
+color: #F5004F;
+border-width: 5px;   /* thickness */
+
+}
+
+/* pause button */
+.pause82jn920nu39 
+
+{
+
+font-size: 20px;
+padding-top: 17px;
+padding-bottom: 17px;
+
+width: 150px;   /* 👈 set same width */
+background-color: #A2CA71;
+color: #F5004F;
+ border-width: 5px;   /* thickness */
+
+}
+
+
+.button38nrm4rf,
+.buttton29n39mo43,
+.start34kn23jk34,
+.pause82jn920nu39
+
+{
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+
+.button38nrm4rf:hover,
+.buttton29n39mo43:hover,
+.start34kn23jk34:hover,
+.pause82jn920nu39:hover {
+  background-color: #508D69; /* example */
+  
+  cursor: pointer;
+}
+
+
+#controls834n43mn3{
+margin-bottom: 50px;
+}
+
+
+.button38nrm4rf:active,
+.buttton29n39mo43:active,
+.start34kn23jk34:active,
+.pause82jn920nu39:active {
+  background-color: #508D69; /* example */
+  
+}
+
+
+/* screen is 800px wide or more */
+
+
+
+
+
+
+
+#gamecontainer738nj89 {
+display: flex;
+justify-content: center; /* center the whole block */
+gap: 60px;               /* space between controls and buttons */
+margin-top: 20px;
+
+}
+
+
+
+
+
+
+/* proyecto juego version pc (final css) */
+
+
+
+@media (max-width: 622px) {
+  .container83nej83m {
+    display: none !important;
+  }
+}
+
+
+
+/* FULLSCREEN LOADER SCREEN */
+#loaderscreen87s88s78 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #748873;   /* 🔵 your background color here */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;        /* highest layer */
+  transition: opacity 0.4s ease;
+}
+
+/* CIRCLE ANIMATION */
+.loader-circle {
+  width: 70px;
+  height: 70px;
+  border: 7px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+
+  margin-bottom: 500px;
+}
+
+/* Spin animation */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+
+
+
+.ndj78iejd92cne
+
+{
+
+position: relative;
+  margin-top: 50px;
+}
+
+
+
+
+.canvas84hb84jn {
+border: 1px solid #333;
+  background-color: #7695FF;
+  display: block;
+  margin: 0 auto;       /* PERFECT CENTER */
+
+}
+
+
+
+.wrapper3456 {
+      display: grid;
+      gap: 0px 0px;
+      max-width: 1000px;
+      width: 90vw;
+      grid-template-columns: repeat(5, 1fr);
+      margin: 0 auto;
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: -5px;
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+      margin-bottom: -5px;
+    }
+
+    .star-path324 {
+      stroke: black;
+      stroke-width: 4; /* <-- Change stroke width here */
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+
+
+
+    /*500 pixels wide or larger*/
+    @media (min-width: 500px) {
+      .wrapper3456 {
+        grid-template-columns: repeat(10, 100px) !important;
+        width: auto;
+        gap: 30px;
+      }
+    }
+
+
+
+
+
+ 
+
+@media (hover: hover) and (pointer: fine) {
+  /* Only devices that actually have hover (desktop/laptop) */
+  .circle4564:hover {
+    background-color: #73946B;
+    border-color: #074799;
+  }
+}
+  
+
+.circle4564 {
+
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+     
+      border: 15px solid #BE3D2A;
+      position: relative;
+      background: #78B7D0;
+      outline: 4px solid #000000;
+      box-shadow: inset 0 0 0 4px #000000;
+    
+    /* 👇 add smooth transition */
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+
+    }
+
+
+    .sjmni83ne73mfr9 {
+      position: absolute;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .hour {
+      width: 10px;
+      height: 10px;
+      background-color: #000000;
+    }
+    .minute {
+      width: 5px;
+      height: 5px;
+      background-color: #000000;
+    }
+
+    .jhu78ij76 {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      font-weight: bold;
+      font-size: 35px;
+      color: #000000;
+     font-family: "Saira", serif;
+     font-weight: 600;
+  
+    }
+
+ 
+
+
+.clockRightSide923 {
+  position: absolute;
+  left: 50%;                  
+  transform: translateX(350px);  
+top: -5px;                 
+}
+
+
+/* ===== MENU (COPIED FROM INDEX) ===== */
+
+.ijf83nte92m3 {
+  font-size: 30px;
+  padding: 5px 20px;
+  font-family: "Almarai", sans-serif;
+  background-color: #0046FF;
+  color: white;
+  transition: 0.3s ease;
+  border-width: 5px;
+  margin: 0 10px;
+}
+
+.ijf83nte92m3:hover {
+  background-color: #59AC77;
+}
+
+.ijf83nte92m3.active {
+  background-color: #59AC77;
+  border-color: #59AC77;
+}
+
+.jn89nfjeu8234nrk9 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #D78FEE;
+  padding: 10px 10px;
+  margin: 0;
+  z-index: 9999;
+}
+
+/* space so content doesn't hide behind menu */
+body {
+  margin: 0;
+  padding-top: 70px;
+}
+
+
+
+
+</style>
+</head>
+<body>
+
+
+<div class="wrapper3456"></div>
+
+
+
+<div id="loaderscreen87s88s78">
+  <div class="loader-circle"></div>
+</div>
+
+<div class="jn89nfjeu8234nrk9" id="jeun73ujr84nr">
+  <button id="btnhome23de" onclick="goHome()" class="ijf83nte92m3">Home</button>
+  <button id="btnabout23de" onclick="jfur87nk93knd84nf()" class="ijf83nte92m3">Aliquam quis</button>
+  <button id="btntitle23de23" onclick="jre83ndke93j23()" class="ijf83nte92m3">Posuere</button>
+  <button id="btngame23fr3" onclick="bfe83mfi9ni34()" class="ijf83nte92m3">Our game</button>
+</div>
+
+
+<div class="container83nej83m"> 
+
+
+
+
+
+
+<div class="ndj78iejd92cne"> 
+
+
+
+
+
+
+ 
+
+<!-- html reloj 1 --> 
+
+<div class="circle4564 clockRightSide923" id="clock7384">
+
+<!-- canvas reloj --> 
+<canvas id="canvas7849hnki" width="250" height="250" style="position:absolute; top:0; left:0;"></canvas>
+
+
+
+
+</div>
+
+<!-- canvas juego -->
+<canvas class="canvas84hb84jn" id="gamecanvas73j42kj33" width="480" height="270"></canvas>
+
+
+
+
+
+
+
+<!-- Game Layout -->
+<div id="gamecontainer738nj89">
+
+<!-- inicio bloque 2 (div) -->
+
+<div id="controls834n43mn3">
+  <button class="buttton29n39mo43" id="button39op439jfn">UP</button><br><br>
+  <button class="button38nrm4rf" id="button34left4ji5">LEFT</button>
+  <button class="button38nrm4rf" id="button84right48j">RIGHT</button><br><br>
+  <button class="buttton29n39mo43" id="button93down832">DOWN</button>
+</div>
+
+
+
+
+
+<!-- Start Button -->
+<div id="gamebuttons839hk32">
+
+<button class="start34kn23jk34" id="startbutton23k44n23" onclick="startGame()">Start Game</button>
+<br><br>
+<!-- pause button -->
+<button class="pause82jn920nu39" id="pause3button934nr3" onclick="togglePause()" disabled>Pause</button>
+
+</div>
+
+
+</div>
+
+
+
+
+<!-- proyecto juego version pc (final body)-->
+
+</div>
+
+
+<script>
+function loadScript(src) {
+  const s = document.createElement("script");
+  s.src = src;
+  document.body.appendChild(s);
+}
+
+
+
+//load pc or mobile game based on pointer type
+
+function loadGame() {
+  const isPc = window.matchMedia("(pointer: fine)").matches;
+
+  if (isPc) {
+    loadScript("script1.js"); // PC game
+  } else {
+    loadScript("script2.js"); // Mobile game
+  }
+}
+
+
+
+
+
+// Run once when page loads
+loadGame();
+
+// Detect resize and reload the page if breakpoint (800px) is crossed
+let wasPc = window.innerWidth >= 800;
+
+window.addEventListener("resize", () => {
+  const isPc = window.innerWidth >= 800;
+  if (isPc !== wasPc) {
+    location.reload(); // reload to switch game
+  }
+});
+</script>
+
+<script>
+function detectDevice() {
+  const isPc = window.matchMedia("(pointer: fine)").matches;
+  const container = document.querySelector(".container83nej83m");
+
+  if (isPc) {
+    container.style.display = "block";   // Show for PC
+  } else {
+    container.style.display = "none";    // Hide for mobile
+  }
+}
+
+detectDevice();
+</script>
+
+
+
+<script>
+window.addEventListener("load", function() {
+  const loader = document.getElementById("loaderscreen87s88s78");
+
+  loader.style.opacity = "0";       // fade out
+  setTimeout(() => {
+    loader.style.display = "none";  // remove from screen
+  }, 400);                          // match transition time
+});
+</script>
+
+
+
+
+<script>
+const wrapper4354 = document.querySelector('.wrapper3456');
+let starsCount = 0;
+
+// --- Star generator functions ---
+function polar(cx, cy, r, angleDeg){
+  const a = angleDeg * Math.PI/180;
+  return { x: cx + r*Math.cos(a), y: cy + r*Math.sin(a) };
+}
+
+function catmullRomToBezier(points, t){
+  const n = points.length;
+  let d = [];
+  for (let i=0;i<n;i++){
+    const p0 = points[(i-1+n)%n];
+    const p1 = points[i];
+    const p2 = points[(i+1)%n];
+    const p3 = points[(i+2)%n];
+    const cp1x = p1.x + (p2.x - p0.x) * t / 6;
+    const cp1y = p1.y + (p2.y - p0.y) * t / 6;
+    const cp2x = p2.x - (p3.x - p1.x) * t / 6;
+    const cp2y = p2.y - (p3.y - p1.y) * t / 6;
+    d.push({ p1, cp1:{x:cp1x,y:cp1y}, cp2:{x:cp2x,y:cp2y}, p2 });
+  }
+  let path = '';
+  if (d.length>0){
+    path += `M ${d[0].p1.x} ${d[0].p1.y} `;
+    d.forEach(seg=>{
+      path += `C ${seg.cp1.x} ${seg.cp1.y} ${seg.cp2.x} ${seg.cp2.y} ${seg.p2.x} ${seg.p2.y} `;
+    });
+    path += 'Z';
+  }
+  return path;
+}
+
+function makeStarPath(outerR, innerR, tension){
+  const cx = 100, cy = 100;
+  const pts = [];
+  for (let i=0;i<10;i++){
+    const angle = -90 + i * 36;
+    const r = (i%2===0) ? outerR : innerR;
+    pts.push(polar(cx, cy, r, angle));
+  }
+  return catmullRomToBezier(pts, tension);
+}
+
+// --- Create stars dynamically ---
+function createStars(count, outerR = 63, innerR = 44) {
+  wrapper4354.innerHTML = ''; 
+  starsCount = count;
+
+  for (let i = 0; i < count; i++) {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", "0 0 200 200");
+    svg.setAttribute("width", "60");
+    svg.setAttribute("height", "60");
+
+    // Gradient defs
+    const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+    const grad = document.createElementNS("http://www.w3.org/2000/svg", "linearGradient");
+    const gradId = "grad" + i;
+    grad.setAttribute("id", gradId);
+    grad.setAttribute("x1", "0%");
+    grad.setAttribute("y1", "0%");
+    grad.setAttribute("x2", "100%");
+    grad.setAttribute("y2", "100%");
+    grad.setAttribute("gradientTransform", "rotate(45)");
+
+    const stop1 = document.createElementNS("http://www.w3.org/2000/svg", "stop");
+    stop1.setAttribute("offset", "0%");
+    stop1.setAttribute("stop-color", "#0A4D68");
+
+    const stop2 = document.createElementNS("http://www.w3.org/2000/svg", "stop");
+    stop2.setAttribute("offset", "100%");
+    stop2.setAttribute("stop-color", "#00FFCA");
+
+    grad.appendChild(stop1);
+    grad.appendChild(stop2);
+    defs.appendChild(grad);
+    svg.appendChild(defs);
+
+    const star = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    star.setAttribute("d", makeStarPath(outerR, innerR, 1.0)); // <-- use passed radii
+    star.setAttribute("fill", `url(#${gradId})`);
+    star.classList.add("star-path324");
+
+    svg.appendChild(star);
+    wrapper4354.appendChild(svg);
+
+    gsap.to(star, {
+      rotation: 360,
+      transformOrigin: "50% 50%",
+      duration: 8,
+      repeat: -1,
+      ease: "linear"
+    });
+  }
+}
+
+
+function updateStars() {
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth >= 500 && starsCount !== 10) {
+    // Normal size for larger screens
+    createStars(10, 68, 49); // outerR = 63, innerR = 44
+  } else if (screenWidth < 500 && starsCount !== 15) {
+    // Bigger stars for small screens
+    createStars(15, 65, 40); // outerR = 80, innerR = 55
+  }
+}
+
+
+updateStars();
+window.addEventListener('resize', updateStars);
+</script>
+
+
+
+<!-- reloj + botones (inicio javascript)-->  
+ 
+<!-- inicio bloque 1 js -->
+<script>
+(function() {
+  const clockContainer = document.getElementById('clock7384');
+  const clockCanvas = document.getElementById('canvas7849hnki');
+
+  if (!clockCanvas || !clockContainer) return;
+
+  const ctx = clockCanvas.getContext('2d');
+
+  // Match canvas to container size
+  clockCanvas.width = clockContainer.clientWidth;
+  clockCanvas.height = clockContainer.clientHeight;
+
+  const borderOffset = 19;
+  const centerX = borderOffset + (clockCanvas.width - borderOffset * 2) / 2;
+  const centerY = borderOffset + (clockCanvas.height - borderOffset * 2) / 2;
+  const radius  = (Math.min(clockCanvas.width, clockCanvas.height) - borderOffset * 2) / 2;
+
+  // --- Generate 60 dots ---
+  for (let i = 0; i < 60; i++) {
+    const angle = i * 6 * Math.PI / 180;
+    const x = centerX + radius * Math.sin(angle);
+    const y = centerY - radius * Math.cos(angle);
+
+    const dot = document.createElement('div');
+    dot.classList.add('sjmni83ne73mfr9');
+    dot.classList.add(i % 5 === 0 ? 'hour' : 'minute');
+    dot.style.left = `${x}px`;
+    dot.style.top = `${y}px`;
+    clockContainer.appendChild(dot);
+  }
+
+  // --- Add numbers 12, 3, 6, 9 ---
+  const numbers = [
+    { num: '12', angle: 0 },
+    { num: '3', angle: 90 },
+    { num: '6', angle: 180 },
+    { num: '9', angle: 270 },
+  ];
+
+  numbers.forEach(({ num, angle }) => {
+    const rad = angle * Math.PI / 180;
+    let inward = num === '12' ? 30 : 25; // adjust spacing
+    const x = centerX + (radius - inward) * Math.sin(rad);
+    const y = centerY - (radius - inward) * Math.cos(rad);
+
+    const numberEl = document.createElement('div');
+    numberEl.classList.add('jhu78ij76');
+    numberEl.textContent = num;
+    numberEl.style.left = `${x}px`;
+    numberEl.style.top = `${y}px`;
+
+    clockContainer.appendChild(numberEl);
+  });
+
+})();
+</script>
+
+<!-- final bloque 1 js -->
+
+
+<!-- inicio bloque 2 js-->
+<script>
+(function() {
+  const canvas = document.getElementById('canvas7849hnki');
+  const ctx = canvas.getContext('2d');
+
+  const borderOffset = 19;
+  const centerX = borderOffset + (canvas.width - borderOffset * 2) / 2;
+  const centerY = borderOffset + (canvas.height - borderOffset * 2) / 2;
+
+  function drawHand(cx, cy, angle, length, width, color) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = color;
+    ctx.moveTo(cx, cy);
+    ctx.lineTo(cx + length * Math.sin(angle), cy - length * Math.cos(angle));
+    ctx.stroke();
+  }
+
+  function drawClockHands() {
+    const now = new Date();
+    const hours = now.getHours() % 12;
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+
+    // Clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Hour hand
+    drawHand(centerX, centerY, ((hours ) * 30) * Math.PI / 180, 50, 10, '#FF0066');
+
+    // Minute hand
+    drawHand(centerX, centerY, ((minutes ) * 6) * Math.PI / 180, 81, 10, '#FF0066');
+
+    // Second hand
+    drawHand(centerX, centerY, (seconds * 6) * Math.PI / 180, 90, 2, 'red');
+
+
+
+// ⭐⭐⭐ ADD THIS PART ⭐⭐⭐
+  // Center black circle
+  ctx.beginPath();
+  ctx.arc(centerX, centerY, 6, 0, Math.PI * 2);
+  ctx.fillStyle = '#000000';
+  ctx.fill();
+  // ⭐⭐⭐ END OF NEW PART ⭐⭐⭐
+
+
+    requestAnimationFrame(drawClockHands);
+  }
+
+  // Start animation
+  drawClockHands();
+})();
+</script>
+<!-- final bloque 2 js-->
+
+<!-- reloj + botones (final javascript)-->
+
+<script>
+function goHome() {
+  window.location.href = "index.html#jdbein23nf43";
+}
+
+function jfur87nk93knd84nf() {
+  window.location.href = "about.html";
+}
+
+function jre83ndke93j23() {
+  window.location.href = "title1.html";
+}
+
+function bfe83mfi9ni34() {
+  window.location.href = "game.html";
+}
+</script>
+
+<script>
+const currentPage = window.location.pathname;
+
+if (currentPage === "/" || currentPage.endsWith("index.html")) {
+  document.getElementById("btnhome23de")?.classList.add("active");
+}
+
+if (currentPage.includes("about")) {
+  document.getElementById("btnabout23de")?.classList.add("active");
+}
+
+if (currentPage.includes("title1")) {
+  document.getElementById("btntitle23de23")?.classList.add("active");
+}
+
+if (currentPage.includes("game")) {
+  document.getElementById("btngame23fr3")?.classList.add("active");
+}
+</script>
+
+
+
+</body>
+</html>
+
+
+
+

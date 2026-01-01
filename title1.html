@@ -1,0 +1,409 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://kit.fontawesome.com/969da6616e.js" crossorigin="anonymous"></script>
+    
+
+
+<style>
+
+/* inicio css title1.html*/
+
+.jen82nrj82n39ijm 
+
+{
+font-size: 40px;
+font-family: "Rubik", sans-serif;
+text-align: center;
+font-weight: 500;
+margin-top: 10px;
+margin-bottom: 0px;
+
+}
+
+
+
+.jdnwik3jco934 
+
+{
+
+font-size: 35px;
+margin-left: 50px;
+margin-right: 50px;
+
+text-align: justify;
+line-height: 1.2;   /* bigger number = more space */
+margin-top: 15px;
+margin-bottom: 30px;
+
+}
+
+
+
+/* inicio css video youtube */
+
+.div794hfk {
+      display: flex;
+      justify-content: center; /* center horizontally */
+      background-color: #78C841;
+      padding-top: 30px;
+      padding-bottom: 30px;
+
+      margin-top: 30px;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;   /* cap the width */
+      aspect-ratio: 16 / 9; /* NEW: keeps video proportional */
+      margin: 0 auto;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+
+/* final css video youtube */
+
+
+.jfnri92nkf843n4 {
+
+font-size: 35px;
+margin-left: 50px;
+margin-right: 50px;
+
+text-align: justify;
+line-height: 1.2;   /* bigger number = more space */
+margin-top: 25px;
+margin-bottom: 40px;
+}
+
+
+
+.jnr84nfjr384nr4 {
+  position: relative;   /* allows absolute positioning of the button */
+  display: flex;
+  justify-content: center;  /* centers the title */
+  align-items: center;
+  margin-top: 20px;
+
+  height: 50px; /* <-- ADD THIS */
+  border: none;
+
+}
+
+
+
+
+
+/* final css title1.html*/
+
+
+
+/* inicio css efecto circulos*/
+
+.wrapper456 {
+  margin: 0 auto 0 auto; /* top | right | bottom | left */
+  display: grid;
+  max-width: 1000px;
+  width: 80vw;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+
+        .circle4563 {
+            background-color: #ED3500;
+            border-radius: 50%;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+        }
+        
+        /*800px wide or more*/
+
+        @media (min-width: 500px) {
+            .wrapper456 {
+                grid-template-columns: repeat(10, 60px);
+                width: auto;
+                row-gap: 30px;   /* vertical gap */
+column-gap: 80px; /* horizontal gap */
+            }
+
+
+ .circle4563:nth-last-child(-n+4) {
+    display: none;
+  }
+
+
+
+
+
+        }
+
+
+/* 499px wide or less*/
+@media (max-width: 499px) {
+  .wrapper456 {
+    grid-template-columns: repeat(4, 1fr) !important; /* keep 4 columns */
+   width: 75vw ; 
+
+row-gap: 20px;   /* vertical gap */
+column-gap: 35px; /* horizontal gap */
+  }
+
+
+  /* hide extra circles so only 12 remain (3 rows × 4 cols) */
+  .circle4563:nth-child(n+13) {
+    display: none;
+  }
+
+
+}
+
+
+/* final css efecto circulos*/
+
+
+
+
+
+
+/* FULLSCREEN LOADER SCREEN */
+#loaderscreen87s88s78 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #748873;   /* 🔵 your background color here */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;        /* highest layer */
+  transition: opacity 0.4s ease;
+}
+
+/* CIRCLE ANIMATION */
+.loader-circle {
+  width: 70px;
+  height: 70px;
+  border: 7px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s infinite linear;
+
+  margin-bottom: 500px;
+}
+
+/* Spin animation */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+
+
+/* ===== MENU (COPIED FROM INDEX) ===== */
+
+.ijf83nte92m3 {
+  font-size: 30px;
+  padding: 5px 20px;
+  font-family: "Almarai", sans-serif;
+  background-color: #0046FF;
+  color: white;
+  transition: 0.3s ease;
+  border-width: 5px;
+  margin: 0 10px;
+}
+
+.ijf83nte92m3:hover {
+  background-color: #59AC77;
+}
+
+.ijf83nte92m3.active {
+  background-color: #59AC77;
+  border-color: #59AC77;
+}
+
+.jn89nfjeu8234nrk9 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #D78FEE;
+  padding: 10px 10px;
+  margin: 0;
+  z-index: 9999;
+}
+
+/* space so content doesn't hide behind menu */
+body {
+  margin: 0;
+  padding-top: 70px;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    
+
+<div id="loaderscreen87s88s78">
+  <div class="loader-circle"></div>
+</div>
+
+
+
+<!-- inicio html title1.html -->
+
+<div class="jnr84nfjr384nr4"> 
+
+
+
+
+
+  <p 
+    class="jen82nrj82n39ijm">
+    Posuere</p>
+
+</div>
+
+<div class="jn89nfjeu8234nrk9" id="jeun73ujr84nr">
+  <button id="btnhome23de" onclick="goHome()" class="ijf83nte92m3">Home</button>
+  <button id="btnabout23de" onclick="jfur87nk93knd84nf()" class="ijf83nte92m3">Aliquam quis</button>
+  <button id="btntitle23de23" onclick="jre83ndke93j23()" class="ijf83nte92m3">Posuere</button>
+  <button id="btngame23fr3" onclick="bfe83mfi9ni34()" class="ijf83nte92m3">Our game</button>
+</div>
+  
+
+
+    <p class="jdnwik3jco934"> 
+        
+Vestibulum ultricies tincidunt velit, in pharetra tellus tincidunt quis. Suspendisse facilisis pharetra purus sed sollicitudin. Nulla odio libero, vulputate sit amet gravida sit amet, mollis ac orci. Suspendisse maximus dolor ac feugiat fermentum. Suspendisse molestie convallis nisi, eget auctor neque varius vitae. Nullam scelerisque ante tortor, nec tempus augue aliquet quis. Ut urna orci, imperdiet at ultrices non, tempor vel libero. Suspendisse nec bibendum neque, et tristique risus. Suspendisse nec finibus mauris. Maecenas consequat ligula semper mattis pharetra. Nulla lacinia lorem at finibus congue. Phasellus pellentesque nibh purus, quis ullamcorper augue luctus ac. Sed eu urna in elit consequat eleifend. Maecenas leo mi, condimentum ut lacinia sit amet, rhoncus sed nunc.
+    </p>
+
+    <!-- final html title1.html -->
+
+
+<div class="wrapper456"></div>
+
+<!-- inicio html video youtube -->
+
+<div class="div794hfk">
+  <div class="video-container">
+    <iframe
+src="https://www.youtube.com/embed/efese9VVvD0?si=a_J4qGpSfM11j67N"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+<!-- final html video youtube -->
+
+<p class="jfnri92nkf843n4">
+
+Aliquam condimentum sed sapien ut malesuada. Donec sed elit non ligula fermentum sodales ac nec turpis. Suspendisse volutpat ullamcorper ex, et cursus diam molestie interdum. Aliquam pellentesque purus nec accumsan lacinia. Aliquam odio leo, rhoncus non ante in, interdum volutpat lacus. Maecenas eu odio aliquet, vulputate velit ac, consectetur enim.
+
+Pellentesque in nisl nec arcu laoreet vestibulum. Quisque lacinia, purus at luctus condimentum, odio eros dignissim justo, egestas tempor nulla ex ut quam. Praesent enim metus, venenatis quis ante et, semper efficitur metus. Fusce sed purus in velit condimentum vestibulum. Sed vehicula, nisl vel ullamcorper viverra, dolor felis mattis urna, eu tempor nunc mi sed nulla. Donec tellus enim, finibus sit amet massa et, ultrices posuere libero. Donec fringilla quam at nibh elementum, eget semper ipsum lacinia. Sed tincidunt urna lacus, in pulvinar lorem ornare id. Praesent non lorem eget urna viverra vestibulum.
+</p>
+
+
+
+
+
+
+<script>
+    const wrapper456 = document.querySelector('.wrapper456');
+
+    // Create 40 animated circles
+    for (let i = 0; i < 24; i++) {
+        const circle4563 = document.createElement('div');
+        circle4563.classList.add('circle4563');
+        wrapper456.appendChild(circle4563);
+
+        // Animate each circle using GSAP
+        gsap.to(circle4563, {
+           scale: 0.1,
+            duration: 1 + Math.random(),
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut"
+        });
+    }
+</script>
+
+
+<script>
+window.addEventListener("load", function() {
+  const loader = document.getElementById("loaderscreen87s88s78");
+
+  loader.style.opacity = "0";       // fade out
+  setTimeout(() => {
+    loader.style.display = "none";  // remove from screen
+  }, 400);                          // match transition time
+});
+</script>
+
+
+<script>
+function goHome() {
+  window.location.href = "index.html#jdbein23nf43";
+}
+
+function jfur87nk93knd84nf() {
+  window.location.href = "about.html";
+}
+
+function jre83ndke93j23() {
+  window.location.href = "title1.html";
+}
+
+function bfe83mfi9ni34() {
+  window.location.href = "game.html";
+}
+</script>
+
+<script>
+const currentPage = window.location.pathname;
+
+if (currentPage === "/" || currentPage.endsWith("index.html")) {
+  document.getElementById("btnhome23de")?.classList.add("active");
+}
+
+if (currentPage.includes("about")) {
+  document.getElementById("btnabout23de")?.classList.add("active");
+}
+
+if (currentPage.includes("title1")) {
+  document.getElementById("btntitle23de23")?.classList.add("active");
+}
+
+if (currentPage.includes("game")) {
+  document.getElementById("btngame23fr3")?.classList.add("active");
+}
+</script>
+
+
+
+</body>
+</html>
+
+
